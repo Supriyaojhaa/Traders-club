@@ -1,5 +1,6 @@
 import Crest from "../Crest";
 import Reveal from "../Reveal";
+import ScrollLetter from "../ScrollLetter";
 import { Diamond } from "../ui";
 import { letter } from "@/content/site";
 
@@ -31,8 +32,9 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
 
   function renderSheet() {
     return (
-        /* The letter sheet */
+        /* The letter sheet, delivered rolled and sealed */
         <Reveal className="relative">
+          <ScrollLetter>
           <article className="relative border border-rule bg-paper px-6 py-14 shadow-[0_30px_80px_-40px_rgba(60,45,20,0.35)] sm:px-16 sm:py-20">
             {/* inner hairline frame */}
             <div aria-hidden className="pointer-events-none absolute inset-3 border border-rule/70 sm:inset-4" />
@@ -91,6 +93,7 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
               </div>
             </div>
           </article>
+          </ScrollLetter>
         </Reveal>
     );
   }

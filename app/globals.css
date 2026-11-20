@@ -136,6 +136,143 @@
   color: var(--color-bronze);
 }
 
+/* ---------- Rolled letter (ScrollLetter) ---------- */
+.scroll-letter {
+  --roll: 40px;
+  --tuck: calc(var(--roll) * -0.4);
+}
+@media (min-width: 40rem) {
+  .scroll-letter { --roll: 50px; }
+}
+
+.scroll-roll {
+  position: relative;
+  z-index: 2;
+  height: var(--roll);
+  border-radius: 999px;
+  /* layer 1: faint wrap lines (animated while rolling), layer 2: curled paper shading */
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 7px, rgba(120, 95, 55, 0.1) 7px 8px),
+    linear-gradient(to bottom, #b9a77f 0%, #e9dec6 22%, #fffaf0 42%, #f3ead8 58%, #d4c4a1 80%, #9c8760 100%);
+  box-shadow:
+    0 14px 22px -14px rgba(60, 45, 20, 0.55),
+    inset 0 -2px 3px rgba(80, 60, 30, 0.25);
+}
+/* Spiral ends of the rolled paper */
+.scroll-roll::before,
+.scroll-roll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: calc(var(--roll) * 0.42);
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #7a6440 0 8%, transparent 9%),
+    repeating-radial-gradient(circle at 50% 50%, #f6eedd 0 3px, #c3b08a 3px 4px);
+  box-shadow: inset 0 0 4px rgba(60, 45, 20, 0.45);
+}
+.scroll-roll::before { left: calc(var(--roll) * -0.12); }
+.scroll-roll::after { right: calc(var(--roll) * -0.12); }
+
+.scroll-sheet {
+  position: relative;
+  z-index: 1;
+  margin-block: var(--tuck);
+  overflow: hidden;
+  transition-property: height;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.35, 1);
+}
+/* Paper emerges from under the curls; hide the article's own top/bottom border there */
+.scroll-sheet article { border-block-width: 0; }
+
+/* Closed bundle: slight sway on hover */
+.scroll-letter.is-sealed .scroll-roll { transition: transform 0.5s ease; }
+.scroll-letter.is-sealed:hover .scroll-roll--top { transform: translateY(-2px) rotate(-0.4deg); }
+.scroll-letter.is-sealed:hover .scroll-roll--bottom { transform: translateY(2px) rotate(0.4deg); }
+
+/* Bottom curl spins (wrap lines travel) and thins as the paper leaves it */
+@keyframes scroll-spin {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 0 64px, 0 0; }
+}
+@keyframes scroll-thin {
+  from { transform: scaleY(1.18); }
+  to { transform: scaleY(1); }
+}
+.scroll-roll--bottom.is-rolling {
+  animation:
+    scroll-spin 0.35s linear infinite,
+    scroll-thin var(--unroll-ms, 3s) cubic-bezier(0.55, 0, 0.35, 1) forwards;
+}
+
+/* Ribbon + wax seal button sits over the closed bundle */
+.scroll-seal-btn {
+  height: calc(var(--roll) * 2 + var(--tuck) * 2);
+}
+.scroll-ribbon {
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  bottom: -14px;
+  width: 30px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #5e1a1a, #8e2a26 30%, #a3352f 50%, #8e2a26 70%, #5e1a1a);
+  box-shadow: 0 6px 12px -6px rgba(40, 10, 10, 0.6);
+  transition: transform 0.6s cubic-bezier(0.5, 0, 0.75, 0), opacity 0.6s ease;
+}
+.scroll-ribbon::after {
+  /* forked tail hanging below the scroll */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 34px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+
+.scroll-seal {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  filter: drop-shadow(0 6px 8px rgba(50, 10, 10, 0.45));
+  transition: transform 0.4s ease;
+}
+.scroll-seal-btn:hover .scroll-seal { transform: scale(1.06) rotate(-4deg); }
+.scroll-seal__half {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.75s cubic-bezier(0.3, 0, 0.6, 1), opacity 0.75s ease;
+}
+.scroll-seal__half--l { clip-path: polygon(0 0, 53% 0, 46% 22%, 56% 41%, 44% 60%, 55% 79%, 48% 100%, 0 100%); }
+.scroll-seal__half--r { clip-path: polygon(53% 0, 100% 0, 100% 100%, 48% 100%, 55% 79%, 44% 60%, 56% 41%, 46% 22%); }
+.scroll-seal__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* irregular poured-wax edge */
+  border-radius: 47% 53% 51% 49% / 53% 46% 54% 47%;
+  background: radial-gradient(circle at 38% 32%, #c4453c 0%, #9a2a24 45%, #6d1915 100%);
+  box-shadow:
+    inset 0 0 0 7px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 9px rgba(255, 200, 180, 0.12),
+    inset -4px -6px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Breaking: seal cracks apart, ribbon slips off */
+[data-stage="breaking"] .scroll-seal__half--l { transform: translate(-46px, 60px) rotate(-38deg); opacity: 0; }
+[data-stage="breaking"] .scroll-seal__half--r { transform: translate(46px, 70px) rotate(32deg); opacity: 0; }
+[data-stage="breaking"] .scroll-ribbon { transform: translate(-50%, 60px); opacity: 0; }
+[data-stage="breaking"] .scroll-seal-btn { cursor: default; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-sheet, .scroll-roll, .scroll-seal__half, .scroll-ribbon { transition: none !important; animation: none !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .rise { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
