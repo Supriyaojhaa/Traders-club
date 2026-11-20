@@ -26,7 +26,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-[96rem] gap-16 px-4 sm:px-8 lg:grid-cols-12 lg:px-10">
           <div className="lg:col-span-4">
             <p className="eyebrow text-[0.6rem]! text-bronze">Write to us</p>
-            <a href={`mailto:${site.email}`} className="mt-4 block font-serif text-2xl text-ink hover:text-bronze">
+            <a href={`mailto:${site.email}`} className="mt-4 block font-serif text-xl text-ink hover:text-bronze">
               {site.email}
             </a>
             <Crest className="mt-16 h-32 w-32 opacity-80" />

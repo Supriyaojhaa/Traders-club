@@ -31,7 +31,7 @@ export default function ApplyPage() {
               ))}
             </ul>
             <div className="mt-12 border-t border-rule pt-10 text-center">
-              <p className="font-serif text-2xl italic text-ink">The application form opens shortly.</p>
+              <p className="font-serif text-xl italic text-ink">The application form opens shortly.</p>
               <p className="mt-3 text-sm text-muted">
                 To register your interest in the meantime, write to{" "}
                 <a href={`mailto:${site.email}`} className="text-bronze underline underline-offset-4">

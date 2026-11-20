@@ -17,10 +17,10 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
           <div className="lg:col-span-5">
             <Reveal className="lg:sticky lg:top-32">
               <p className="eyebrow section-label">Our Vision</p>
-              <Heading className="display mt-8 text-[3.4rem] text-ink sm:text-7xl lg:text-6xl xl:text-7xl">
+              <Heading className="display mt-8 text-[2.25rem] text-ink sm:text-5xl lg:text-[2.75rem] xl:text-[3.25rem]">
                 {letter.heading}
               </Heading>
-              <p className="mt-6 font-serif text-2xl italic text-bronze">{letter.subheading}</p>
+              <p className="mt-6 font-serif text-xl italic text-bronze">{letter.subheading}</p>
             </Reveal>
           </div>
           <div className="lg:col-span-7">{renderSheet()}</div>
@@ -45,7 +45,7 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
               <Crest className="h-16 w-16 shrink-0" detailed={false} />
             </header>
 
-            <div className="relative mt-12 text-justify hyphens-auto font-serif text-[1.3rem] leading-[1.75] text-charcoal sm:text-[1.45rem]">
+            <div className="relative mt-12 text-justify hyphens-auto font-serif text-[1.05rem] leading-[1.8] text-charcoal sm:text-[1.15rem]">
               <p className="mb-8 italic text-ink">{letter.salutation}</p>
 
               {letter.body.map((p, i) => {
@@ -71,20 +71,20 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
                   return (
                     <Reveal key={i} as="blockquote" className="my-14 text-center">
                       <Diamond className="mb-6" />
-                      <p className="display text-3xl italic text-bronze sm:text-4xl">{p.text}</p>
+                      <p className="display text-2xl italic text-bronze sm:text-3xl">{p.text}</p>
                       <Diamond className="mt-6" />
                     </Reveal>
                   );
                 }
                 return (
-                  <p key={i} className={i === 0 ? "mb-8 text-[1.9rem] leading-snug text-ink sm:text-[2.2rem]" : "mb-6"}>
+                  <p key={i} className={i === 0 ? "mb-8 text-[1.4rem] leading-snug text-ink sm:text-[1.6rem]" : "mb-6"}>
                     {p.text}
                   </p>
                 );
               })}
 
               <div className="mt-14 flex flex-col items-center border-t border-rule pt-12 text-center">
-                <p className="display text-4xl italic text-ink sm:text-5xl">{letter.closing}</p>
+                <p className="display text-3xl italic text-ink sm:text-4xl">{letter.closing}</p>
                 <Reveal draw className="mt-10 text-gold">
                   <Crest className="h-28 w-28" />
                 </Reveal>

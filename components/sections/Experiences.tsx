@@ -11,7 +11,7 @@ export default function Experiences({ standalone = false }: { standalone?: boole
             <Eyebrow>Experiences &amp; Events</Eyebrow>
           </Reveal>
           <Reveal className="lg:col-span-8" delay={100}>
-            <h2 className="display text-[3.4rem] text-ink sm:text-7xl">
+            <h2 className="display text-[2.25rem] text-ink sm:text-5xl lg:text-[3.5rem]">
               More than membership. <em className="text-bronze">An ongoing experience.</em>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
@@ -39,7 +39,7 @@ export default function Experiences({ standalone = false }: { standalone?: boole
               <span className="eyebrow col-span-2 text-[0.6rem]! text-gold md:col-span-1">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="display col-span-10 text-2xl text-ink transition-colors group-hover:text-bronze sm:text-3xl md:col-span-5">
+              <span className="display col-span-10 text-xl text-ink transition-colors group-hover:text-bronze sm:text-2xl md:col-span-5">
                 {e.name}
               </span>
               <span className="col-span-10 col-start-3 text-sm italic text-muted md:col-span-3 md:col-start-auto md:font-serif md:text-lg">

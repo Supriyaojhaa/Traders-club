@@ -60,20 +60,20 @@
 
 /* Section label above a section's main heading (e.g. "Our Vision") */
 .section-label {
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   color: var(--color-bronze);
 }
 @media (min-width: 40rem) {
-  .section-label { font-size: 1.5rem; }
+  .section-label { font-size: 1.1rem; }
 }
 
 .display {
   font-family: var(--font-serif);
   font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: -0.01em;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 /* Reveal on scroll */

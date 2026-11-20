@@ -36,13 +36,13 @@ export default function MembershipPage() {
         <div className="mx-auto grid max-w-[96rem] gap-14 px-4 sm:px-8 lg:grid-cols-12 lg:px-10">
           <div className="lg:col-span-4">
             <p className="eyebrow section-label">Questions</p>
-            <h2 className="display mt-6 text-[3.4rem] text-ink sm:text-7xl">Before you apply.</h2>
+            <h2 className="display mt-6 text-[2.25rem] text-ink sm:text-5xl lg:text-[3.5rem]">Before you apply.</h2>
           </div>
           <div className="lg:col-span-8">
             {faqs.map((f, i) => (
               <Reveal key={f.q} delay={i * 60}>
                 <details className="group border-b border-rule py-7 [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex cursor-pointer items-baseline justify-between gap-6 font-serif text-2xl text-ink">
+                  <summary className="flex cursor-pointer items-baseline justify-between gap-6 font-serif text-xl text-ink">
                     {f.q}
                     <span aria-hidden className="text-gold transition-transform duration-500 group-open:rotate-45">+</span>
                   </summary>

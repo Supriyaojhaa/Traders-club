@@ -20,7 +20,7 @@ export default function FinalCta() {
           <Crest className="h-24 w-24" />
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="display mt-12 text-[3.4rem] sm:text-7xl">
+          <h2 className="display mt-12 text-[2.25rem] sm:text-5xl lg:text-[3.5rem]">
             Your trading journey doesn&apos;t have to be <em className="text-gold">a solo one.</em>
           </h2>
         </Reveal>
@@ -36,7 +36,7 @@ export default function FinalCta() {
           </Button>
         </Reveal>
         <Reveal delay={400} className="mt-20">
-          <p className="flex flex-col gap-1 font-serif text-2xl italic text-gold sm:flex-row sm:gap-4 sm:text-3xl">
+          <p className="flex flex-col gap-1 font-serif text-xl italic text-gold sm:flex-row sm:gap-4 sm:text-2xl">
             {site.philosophy.map((p) => (
               <span key={p}>{p}</span>
             ))}

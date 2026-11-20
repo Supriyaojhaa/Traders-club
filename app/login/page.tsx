@@ -11,7 +11,7 @@ export default function LoginPage() {
         <div aria-hidden className="pointer-events-none absolute inset-3 border border-rule/70" />
         <Crest className="mx-auto h-24 w-24" />
         <p className="eyebrow section-label mt-10">Members&apos; Area</p>
-        <h1 className="display mt-4 text-[3.4rem] text-ink sm:text-7xl">Opening soon.</h1>
+        <h1 className="display mt-4 text-[2.25rem] text-ink sm:text-5xl lg:text-[3.5rem]">Opening soon.</h1>
         <p className="mt-5 text-[0.8rem] leading-relaxed text-muted">
           The members&apos; area is being prepared. Approved members will receive access details and onboarding
           instructions directly.

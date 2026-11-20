@@ -13,7 +13,7 @@ export default function People() {
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="display mt-10 max-w-6xl text-[3.4rem] sm:text-7xl">
+          <h2 className="display mt-10 max-w-6xl text-[2.25rem] sm:text-5xl lg:text-[3.5rem]">
             Different strategies. Different journeys.{" "}
             <em className="text-gold">One community.</em>
           </h2>
@@ -34,7 +34,7 @@ export default function People() {
 
       <div className="mx-auto mt-20 grid max-w-[96rem] gap-12 px-4 sm:px-8 lg:grid-cols-12 lg:px-10">
         <Reveal className="lg:col-span-5">
-          <p className="font-serif text-2xl leading-snug text-ivory sm:text-3xl">
+          <p className="font-serif text-xl leading-snug text-ivory sm:text-2xl">
             The club is not restricted to one trading style or market segment.
           </p>
         </Reveal>

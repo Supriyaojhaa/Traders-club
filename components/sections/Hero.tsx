@@ -26,7 +26,7 @@ export default function Hero() {
           {site.name}
         </p>
 
-        <h1 className="display mt-8 text-[2.95rem] text-ink sm:text-6xl md:text-[4.875rem] lg:text-[6.125rem]">
+        <h1 className="display mt-8 text-[2.4rem] text-ink sm:text-5xl md:text-[3.5rem] lg:text-[4.25rem]">
           {lines.map((l, i) => (
             <span key={l} className="rise block" style={{ animationDelay: `${300 + i * 180}ms` }}>
               {i === 2 ? (

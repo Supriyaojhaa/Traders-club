@@ -51,14 +51,14 @@ export default function ClubPage() {
               >
                 <div className="relative flex aspect-square w-full max-w-sm items-center justify-center border border-rule bg-paper">
                   <div aria-hidden className="absolute inset-3 border border-rule/70" />
-                  <span className="display absolute left-6 top-4 text-6xl text-gold/40">{p.numeral}</span>
+                  <span className="display absolute left-6 top-4 text-5xl text-gold/40">{p.numeral}</span>
                   <Motif type={p.motif} className="h-3/5 w-3/5 text-bronze" />
                 </div>
               </Reveal>
               <Reveal className={`lg:col-span-6 ${i % 2 === 1 ? "lg:order-1" : "lg:col-start-7"}`} delay={120}>
                 <p className="eyebrow section-label">Pillar {p.numeral}</p>
-                <h2 className="display mt-6 text-[2.5rem] text-ink sm:text-5xl">{p.name}</h2>
-                <p className="mt-4 font-serif text-xl italic text-bronze">{p.tagline}</p>
+                <h2 className="display mt-6 text-[2rem] text-ink sm:text-[2.5rem]">{p.name}</h2>
+                <p className="mt-4 font-serif text-lg italic text-bronze">{p.tagline}</p>
                 {p.description.map((d) => (
                   <p key={d} className="mt-6 text-base leading-relaxed text-muted">
                     {d}
