@@ -11,7 +11,7 @@ export default function Experiences({ standalone = false }: { standalone?: boole
             <Eyebrow>Experiences &amp; Events</Eyebrow>
           </Reveal>
           <Reveal className="lg:col-span-8" delay={100}>
-            <h2 className="display text-5xl text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            <h2 className="display text-[3.4rem] text-ink sm:text-7xl">
               More than membership. <em className="text-bronze">An ongoing experience.</em>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">

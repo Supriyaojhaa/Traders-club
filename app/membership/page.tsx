@@ -35,8 +35,8 @@ export default function MembershipPage() {
       <section className="bg-paper py-28 sm:py-32">
         <div className="mx-auto grid max-w-[96rem] gap-14 px-4 sm:px-8 lg:grid-cols-12 lg:px-10">
           <div className="lg:col-span-4">
-            <p className="eyebrow text-bronze">Questions</p>
-            <h2 className="display mt-6 text-5xl text-ink sm:text-6xl">Before you apply.</h2>
+            <p className="eyebrow section-label">Questions</p>
+            <h2 className="display mt-6 text-[3.4rem] text-ink sm:text-7xl">Before you apply.</h2>
           </div>
           <div className="lg:col-span-8">
             {faqs.map((f, i) => (

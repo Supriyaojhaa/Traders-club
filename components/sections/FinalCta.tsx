@@ -20,7 +20,7 @@ export default function FinalCta() {
           <Crest className="h-24 w-24" />
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="display mt-12 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h2 className="display mt-12 text-[3.4rem] sm:text-7xl">
             Your trading journey doesn&apos;t have to be <em className="text-gold">a solo one.</em>
           </h2>
         </Reveal>

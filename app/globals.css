@@ -12,8 +12,8 @@
   --color-bronze: #8c6a43;
   --color-rule: #d9cfbd;
 
-  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
+  --font-serif: "Google Sans", system-ui, sans-serif;
+  --font-sans: "Google Sans", system-ui, sans-serif;
 }
 
 @layer base {
@@ -56,6 +56,17 @@
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+}
+
+/* Section label above a section's main heading (e.g. "Our Vision") */
+.section-label {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--color-bronze);
+}
+@media (min-width: 40rem) {
+  .section-label { font-size: 1.5rem; }
 }
 
 .display {

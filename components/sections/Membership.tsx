@@ -10,7 +10,7 @@ export default function Membership({ standalone = false }: { standalone?: boolea
           <Eyebrow>Membership</Eyebrow>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="display mt-10 max-w-6xl text-5xl text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h2 className="display mt-10 max-w-6xl text-[3.4rem] text-ink sm:text-7xl">
             Not every trader needs to be a member.{" "}
             <em className="text-bronze">But every serious trader deserves a community.</em>
           </h2>
@@ -52,7 +52,7 @@ export default function Membership({ standalone = false }: { standalone?: boolea
                     {i + 1}
                   </span>
                   <div className="pt-1.5">
-                    <h3 className="display text-2xl text-ink">{s.title}</h3>
+                    <h3 className="display text-3xl text-ink">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
                   </div>
                 </Reveal>

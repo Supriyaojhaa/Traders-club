@@ -1,5 +1,4 @@
-import Arches from "../Arches";
-import Reveal from "../Reveal";
+import Image from "next/image";
 import { Button } from "../ui";
 import { site } from "@/content/site";
 
@@ -8,22 +7,26 @@ const lines = ["A community built", "for those who take", "trading seriously."];
 export default function Hero() {
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-ivory pt-32">
-      {/* Architectural backdrop */}
-      <Reveal draw className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto w-full max-w-[90rem] text-gold/70">
-        <Arches className="h-auto max-h-[72vh] w-full" />
-      </Reveal>
+      {/* Photographic backdrop — starts below the fixed header (h-24) */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 top-24">
+        <Image src="/images/hero-bg.png" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+      </div>
+      {/* Ivory wash keeps the headline legible over the photo */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, var(--color-ivory) 35%, transparent 100%)" }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 top-24"
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 55% at 50% 45%, rgb(246 241 231 / 0.88) 30%, rgb(246 241 231 / 0.35) 100%)",
+        }}
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-4 pb-24 text-center sm:px-8">
-        <p className="eyebrow rise text-bronze" style={{ animationDelay: "100ms" }}>
+        <p className="eyebrow section-label rise" style={{ animationDelay: "100ms" }}>
           {site.name}
         </p>
 
-        <h1 className="display mt-8 text-[3rem] text-ink sm:text-6xl md:text-7xl lg:text-[6.75rem]">
+        <h1 className="display mt-8 text-[2.95rem] text-ink sm:text-6xl md:text-[4.875rem] lg:text-[6.125rem]">
           {lines.map((l, i) => (
             <span key={l} className="rise block" style={{ animationDelay: `${300 + i * 180}ms` }}>
               {i === 2 ? (
@@ -38,7 +41,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="rise mt-8 max-w-xl text-base leading-relaxed text-muted sm:text-lg"
+          className="rise mt-8 max-w-xl text-[0.8rem] leading-relaxed text-muted sm:text-sm"
           style={{ animationDelay: "1000ms" }}
         >
           A private ecosystem for professional traders to connect, learn, exchange ideas and grow beyond the markets.

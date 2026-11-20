@@ -27,25 +27,25 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-          scrolled ? "bg-ivory/90 py-3 shadow-[0_1px_0_var(--color-rule)] backdrop-blur-md" : "py-6"
+        className={`fixed inset-x-0 top-0 z-50 bg-ivory shadow-[0_1px_0_var(--color-rule)] transition-all duration-700 ${
+          scrolled ? "py-3" : "py-6"
         }`}
       >
         <div className="mx-auto flex max-w-[96rem] items-center justify-between px-4 sm:px-6 lg:px-10">
           <Link href="/" className="flex items-center gap-3" aria-label="The Professional Traders Club — Home">
-            <Crest className={`transition-all duration-700 ${scrolled ? "h-9 w-9" : "h-11 w-11"}`} detailed={false} />
+            <Crest className={`transition-all duration-700 ${scrolled ? "h-10 w-10" : "h-12 w-12"}`} detailed={false} />
             <span className="hidden flex-col leading-none sm:flex">
-              <span className="font-serif text-[1.15rem] tracking-wide text-ink">The Professional</span>
-              <span className="eyebrow mt-1 text-[0.56rem]! text-bronze">Traders Club</span>
+              <span className="font-serif text-[1.4rem] tracking-wide text-ink">The Professional</span>
+              <span className="eyebrow mt-1 text-[0.66rem]! text-bronze">Traders Club</span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-9" aria-label="Main">
             {nav.slice(1).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`eyebrow text-[0.62rem]! transition-colors hover:text-bronze ${
+                className={`eyebrow text-[0.72rem]! transition-colors hover:text-bronze ${
                   pathname === item.href ? "text-bronze" : "text-charcoal"
                 }`}
               >
@@ -55,12 +55,12 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-5">
-            <Link href="/login" className="eyebrow hidden text-[0.62rem]! text-muted hover:text-bronze md:block">
+            <Link href="/login" className="eyebrow hidden text-[0.72rem]! text-muted hover:text-bronze md:block">
               Member Login
             </Link>
             <Link
               href="/membership/apply"
-              className="eyebrow hidden border border-ink bg-ink px-5 py-3 text-[0.6rem]! text-ivory transition-colors duration-500 hover:border-bronze hover:bg-bronze sm:block"
+              className="eyebrow hidden border border-ink bg-ink px-6 py-3 text-[0.7rem]! text-ivory transition-colors duration-500 hover:border-bronze hover:bg-bronze sm:block"
             >
               Apply
             </Link>

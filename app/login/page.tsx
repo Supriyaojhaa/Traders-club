@@ -10,9 +10,9 @@ export default function LoginPage() {
       <div className="relative w-full max-w-md border border-rule bg-paper px-8 py-14 text-center sm:px-12">
         <div aria-hidden className="pointer-events-none absolute inset-3 border border-rule/70" />
         <Crest className="mx-auto h-24 w-24" />
-        <p className="eyebrow mt-10 text-bronze">Members&apos; Area</p>
-        <h1 className="display mt-4 text-5xl text-ink">Opening soon.</h1>
-        <p className="mt-5 leading-relaxed text-muted">
+        <p className="eyebrow section-label mt-10">Members&apos; Area</p>
+        <h1 className="display mt-4 text-[3.4rem] text-ink sm:text-7xl">Opening soon.</h1>
+        <p className="mt-5 text-[0.8rem] leading-relaxed text-muted">
           The members&apos; area is being prepared. Approved members will receive access details and onboarding
           instructions directly.
         </p>

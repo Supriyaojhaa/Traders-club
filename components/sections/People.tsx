@@ -13,7 +13,7 @@ export default function People() {
           </p>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="display mt-10 max-w-6xl text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h2 className="display mt-10 max-w-6xl text-[3.4rem] sm:text-7xl">
             Different strategies. Different journeys.{" "}
             <em className="text-gold">One community.</em>
           </h2>

@@ -80,7 +80,7 @@ export default function Crest({ className = "", tone = "gold", detailed = true }
         <>
           <text
             fill="currentColor"
-            style={{ fontFamily: "var(--font-manrope)", fontSize: 8.4, letterSpacing: "0.2em", fontWeight: 600 }}
+            style={{ fontFamily: "var(--font-sans)", fontSize: 8.4, letterSpacing: "0.2em", fontWeight: 600 }}
           >
             <textPath href="#crest-top" startOffset="50%" textAnchor="middle">
               THE PROFESSIONAL TRADERS CLUB
@@ -88,7 +88,7 @@ export default function Crest({ className = "", tone = "gold", detailed = true }
           </text>
           <text
             fill="currentColor"
-            style={{ fontFamily: "var(--font-manrope)", fontSize: 7.4, letterSpacing: "0.3em", fontWeight: 600 }}
+            style={{ fontFamily: "var(--font-sans)", fontSize: 7.4, letterSpacing: "0.3em", fontWeight: 600 }}
           >
             <textPath href="#crest-bottom" startOffset="50%" textAnchor="middle">
               TRADE · THINK · LIVE
@@ -105,7 +105,7 @@ export default function Crest({ className = "", tone = "gold", detailed = true }
         y="109"
         textAnchor="middle"
         fill="currentColor"
-        style={{ fontFamily: "var(--font-cormorant)", fontSize: 28, fontWeight: 500, letterSpacing: "0.05em" }}
+        style={{ fontFamily: "var(--font-serif)", fontSize: 28, fontWeight: 500, letterSpacing: "0.05em" }}
       >
         PTC
       </text>

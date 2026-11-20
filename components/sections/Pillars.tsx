@@ -13,7 +13,7 @@ export default function Pillars() {
             <Eyebrow>The Club</Eyebrow>
           </Reveal>
           <Reveal className="lg:col-span-8" delay={100}>
-            <h2 className="display text-5xl text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            <h2 className="display text-[3.4rem] text-ink sm:text-7xl">
               Eight pillars. <em className="text-bronze">One way of life.</em>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
@@ -38,7 +38,7 @@ export default function Pillars() {
                     className="h-16 w-16 text-bronze/70 transition-transform duration-1000 group-hover:scale-110 group-hover:text-bronze"
                   />
                 </div>
-                <h3 className="display mt-12 text-[1.9rem] text-ink">{p.name}</h3>
+                <h3 className="display mt-12 text-[2.3rem] text-ink">{p.name}</h3>
                 <p className="mt-3 font-serif text-lg italic text-bronze">{p.tagline}</p>
                 <p className="mt-5 text-sm leading-relaxed text-muted">{p.description[0]}</p>
                 <span className="eyebrow mt-auto pt-8 text-[0.58rem]! text-charcoal transition-colors group-hover:text-bronze">

@@ -19,8 +19,10 @@ export default function ClubPage() {
           </>
         }
       >
-        The club is built around eight distinct experiences, each with its own purpose. All of them are held online,
-        so members can take part wherever they are based.
+        <span className="text-base">
+          The club is built around eight distinct experiences, each with its own purpose. All of them are held online,
+          so members can take part wherever they are based.
+        </span>
       </PageIntro>
 
       {/* Index */}
@@ -54,11 +56,11 @@ export default function ClubPage() {
                 </div>
               </Reveal>
               <Reveal className={`lg:col-span-6 ${i % 2 === 1 ? "lg:order-1" : "lg:col-start-7"}`} delay={120}>
-                <p className="eyebrow text-bronze">Pillar {p.numeral}</p>
-                <h2 className="display mt-6 text-5xl text-ink sm:text-6xl md:text-7xl">{p.name}</h2>
-                <p className="mt-4 font-serif text-2xl italic text-bronze">{p.tagline}</p>
+                <p className="eyebrow section-label">Pillar {p.numeral}</p>
+                <h2 className="display mt-6 text-[2.5rem] text-ink sm:text-5xl">{p.name}</h2>
+                <p className="mt-4 font-serif text-xl italic text-bronze">{p.tagline}</p>
                 {p.description.map((d) => (
-                  <p key={d} className="mt-6 text-lg leading-relaxed text-muted">
+                  <p key={d} className="mt-6 text-base leading-relaxed text-muted">
                     {d}
                   </p>
                 ))}

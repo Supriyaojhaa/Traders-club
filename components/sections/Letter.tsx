@@ -1,41 +1,51 @@
 import Crest from "../Crest";
 import Reveal from "../Reveal";
-import { Diamond, Eyebrow } from "../ui";
+import { Diamond } from "../ui";
 import { letter } from "@/content/site";
 
 export default function Letter({ standalone = false }: { standalone?: boolean }) {
   const places = letter.body.filter((p) => p.place);
   const firstPlace = letter.body.findIndex((p) => p.place);
+  // The Vision page owns the page's h1; on the home page it's a section h2.
+  const Heading = standalone ? "h1" : "h2";
 
   return (
     <section id="vision" className={`relative bg-sand/60 ${standalone ? "pt-40" : "pt-28"} pb-28 sm:pb-36`}>
       <div className="mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-10">
-        {/* Section heading */}
-        <div className="grid gap-10 lg:grid-cols-12">
-          <Reveal className="lg:col-span-4">
-            <Eyebrow>Our Vision</Eyebrow>
-          </Reveal>
-          <Reveal className="lg:col-span-8" delay={100}>
-            <h2 className="display text-5xl text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem]">{letter.heading}</h2>
-            <p className="mt-6 font-serif text-2xl italic text-bronze">{letter.subheading}</p>
-          </Reveal>
+        {/* Heading + description on the left, letter on the right */}
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <Reveal className="lg:sticky lg:top-32">
+              <p className="eyebrow section-label">Our Vision</p>
+              <Heading className="display mt-8 text-[3.4rem] text-ink sm:text-7xl lg:text-6xl xl:text-7xl">
+                {letter.heading}
+              </Heading>
+              <p className="mt-6 font-serif text-2xl italic text-bronze">{letter.subheading}</p>
+            </Reveal>
+          </div>
+          <div className="lg:col-span-7">{renderSheet()}</div>
         </div>
+      </div>
+    </section>
+  );
 
-        {/* The letter sheet */}
-        <Reveal className="relative mx-auto mt-20 max-w-4xl">
+  function renderSheet() {
+    return (
+        /* The letter sheet */
+        <Reveal className="relative">
           <article className="relative border border-rule bg-paper px-6 py-14 shadow-[0_30px_80px_-40px_rgba(60,45,20,0.35)] sm:px-16 sm:py-20">
             {/* inner hairline frame */}
             <div aria-hidden className="pointer-events-none absolute inset-3 border border-rule/70 sm:inset-4" />
 
             <header className="relative flex items-start justify-between gap-6 border-b border-rule pb-8">
               <div>
-                <p className="eyebrow text-[0.6rem]! text-bronze">An Open Letter</p>
+                <p className="eyebrow text-[0.95rem]! font-extrabold! text-bronze sm:text-[1.1rem]!">An Open Letter</p>
                 <p className="mt-2 text-sm text-muted">From the club, to every serious trader</p>
               </div>
               <Crest className="h-16 w-16 shrink-0" detailed={false} />
             </header>
 
-            <div className="relative mt-12 font-serif text-[1.3rem] leading-[1.75] text-charcoal sm:text-[1.45rem]">
+            <div className="relative mt-12 text-justify hyphens-auto font-serif text-[1.3rem] leading-[1.75] text-charcoal sm:text-[1.45rem]">
               <p className="mb-8 italic text-ink">{letter.salutation}</p>
 
               {letter.body.map((p, i) => {
@@ -82,7 +92,6 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
             </div>
           </article>
         </Reveal>
-      </div>
-    </section>
-  );
+    );
+  }
 }

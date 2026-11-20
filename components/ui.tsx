@@ -28,7 +28,7 @@ export function Button({ href, children, variant = "solid", className = "" }: Bt
 
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`eyebrow text-[0.85rem]! tracking-[0.24em]! text-bronze sm:text-[1rem]! ${className}`}>
+    <p className={`eyebrow section-label ${className}`}>
       {children}
     </p>
   );
