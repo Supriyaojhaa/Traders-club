@@ -110,7 +110,7 @@ export type Pillar = {
 
 export const pillars: Pillar[] = [
   {
-    numeral: "I",
+    numeral: "1",
     slug: "trading-floor",
     name: "The Trading Floor",
     tagline: "Where serious traders come together.",
@@ -122,7 +122,7 @@ export const pillars: Pillar[] = [
     motif: "floor",
   },
   {
-    numeral: "II",
+    numeral: "2",
     slug: "innovation-room",
     name: "The Innovation Room",
     tagline: "Where strategies meet scrutiny.",
@@ -134,7 +134,7 @@ export const pillars: Pillar[] = [
     motif: "innovation",
   },
   {
-    numeral: "III",
+    numeral: "3",
     slug: "business-circle",
     name: "The Business Circle",
     tagline: "Beyond trading. Beyond the charts.",
@@ -146,7 +146,7 @@ export const pillars: Pillar[] = [
     motif: "business",
   },
   {
-    numeral: "IV",
+    numeral: "4",
     slug: "knowledge-exchange",
     name: "The Knowledge Exchange",
     tagline: "Learn from those who have walked the path.",
@@ -158,7 +158,7 @@ export const pillars: Pillar[] = [
     motif: "knowledge",
   },
   {
-    numeral: "V",
+    numeral: "5",
     slug: "performance-room",
     name: "The Performance Room",
     tagline: "An honest conversation about performance.",
@@ -171,7 +171,7 @@ export const pillars: Pillar[] = [
     motif: "performance",
   },
   {
-    numeral: "VI",
+    numeral: "6",
     slug: "stillness-room",
     name: "The Stillness Room",
     tagline: "Find your balance beyond the markets.",
@@ -183,7 +183,7 @@ export const pillars: Pillar[] = [
     motif: "stillness",
   },
   {
-    numeral: "VII",
+    numeral: "7",
     slug: "conditioning-club",
     name: "The Conditioning Club",
     tagline: "A strong trading mind deserves a healthy body.",
@@ -195,7 +195,7 @@ export const pillars: Pillar[] = [
     motif: "conditioning",
   },
   {
-    numeral: "VIII",
+    numeral: "8",
     slug: "reflection-room",
     name: "The Reflection Room",
     tagline: "The psychological side of trading deserves attention too.",

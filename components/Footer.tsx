@@ -35,7 +35,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[96rem] px-4 pb-10 pt-16 sm:px-6 lg:px-10">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
-          <div className="lg:col-span-4">
+          <div className="flex flex-col items-center text-center lg:col-span-4">
             <Link href="/" className="inline-block" aria-label={`${site.name} — Home`}>
               <Crest className="h-36 w-36 text-gold" detailed={false} />
             </Link>

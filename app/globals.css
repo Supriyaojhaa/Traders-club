@@ -107,6 +107,180 @@
   stroke-dashoffset: 0;
 }
 
+/* ---------- Gilded pillar motifs (The Club page) ---------- */
+
+/* Card: glow, light sweep, corner brackets */
+.pillar-frame__glow {
+  background: radial-gradient(circle at 50% 55%, rgba(214, 183, 122, 0.22), transparent 62%);
+  opacity: 0;
+  transition: opacity 2s ease 0.6s;
+}
+.draw.is-visible .pillar-frame__glow {
+  opacity: 1;
+  animation: pillar-glow 6s ease-in-out 2.6s infinite;
+}
+@keyframes pillar-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pillar-frame::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(115deg, transparent 42%, rgba(246, 230, 196, 0.1) 50%, transparent 58%);
+  transform: translateX(-60%);
+  pointer-events: none;
+}
+.draw.is-visible .pillar-frame::after { animation: pillar-sheen 7s ease-in-out 2.4s infinite; }
+@keyframes pillar-sheen {
+  0% { transform: translateX(-60%); }
+  35%, 100% { transform: translateX(60%); }
+}
+.pillar-corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid rgba(214, 183, 122, 0.85);
+  transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s, height 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s;
+}
+.pillar-corner--tl { top: 12px; left: 12px; border-top-width: 1px; border-left-width: 1px; }
+.pillar-corner--tr { top: 12px; right: 12px; border-top-width: 1px; border-right-width: 1px; }
+.pillar-corner--bl { bottom: 12px; left: 12px; border-bottom-width: 1px; border-left-width: 1px; }
+.pillar-corner--br { bottom: 12px; right: 12px; border-bottom-width: 1px; border-right-width: 1px; }
+.draw.is-visible .pillar-corner { width: 28px; height: 28px; }
+.draw.is-visible .pillar-frame:hover .pillar-corner { width: 48px; height: 48px; transition-delay: 0s; }
+
+/* Staggered line draw */
+.draw .picon path,
+.draw .picon circle,
+.draw .picon line,
+.draw .picon rect,
+.draw .picon polyline {
+  transition-duration: 1.6s;
+}
+.draw .picon > g:not(.i-sparks) > :nth-child(1),
+.draw .picon > g:not(.i-sparks) > :nth-child(1) > * { transition-delay: 0.00s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(2),
+.draw .picon > g:not(.i-sparks) > :nth-child(2) > * { transition-delay: 0.12s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(3),
+.draw .picon > g:not(.i-sparks) > :nth-child(3) > * { transition-delay: 0.24s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(4),
+.draw .picon > g:not(.i-sparks) > :nth-child(4) > * { transition-delay: 0.36s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(5),
+.draw .picon > g:not(.i-sparks) > :nth-child(5) > * { transition-delay: 0.48s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(6),
+.draw .picon > g:not(.i-sparks) > :nth-child(6) > * { transition-delay: 0.60s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(7),
+.draw .picon > g:not(.i-sparks) > :nth-child(7) > * { transition-delay: 0.72s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(8),
+.draw .picon > g:not(.i-sparks) > :nth-child(8) > * { transition-delay: 0.84s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(9),
+.draw .picon > g:not(.i-sparks) > :nth-child(9) > * { transition-delay: 0.96s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(10),
+.draw .picon > g:not(.i-sparks) > :nth-child(10) > * { transition-delay: 1.08s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(11),
+.draw .picon > g:not(.i-sparks) > :nth-child(11) > * { transition-delay: 1.20s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(12),
+.draw .picon > g:not(.i-sparks) > :nth-child(12) > * { transition-delay: 1.32s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(13),
+.draw .picon > g:not(.i-sparks) > :nth-child(13) > * { transition-delay: 1.44s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(14),
+.draw .picon > g:not(.i-sparks) > :nth-child(14) > * { transition-delay: 1.56s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(15),
+.draw .picon > g:not(.i-sparks) > :nth-child(15) > * { transition-delay: 1.68s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(16),
+.draw .picon > g:not(.i-sparks) > :nth-child(16) > * { transition-delay: 1.80s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(17),
+.draw .picon > g:not(.i-sparks) > :nth-child(17) > * { transition-delay: 1.92s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(18),
+.draw .picon > g:not(.i-sparks) > :nth-child(18) > * { transition-delay: 2.04s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(19),
+.draw .picon > g:not(.i-sparks) > :nth-child(19) > * { transition-delay: 2.16s; }
+.draw .picon > g:not(.i-sparks) > :nth-child(20),
+.draw .picon > g:not(.i-sparks) > :nth-child(20) > * { transition-delay: 2.28s; }
+
+.picon { overflow: visible; transition: filter 1.5s ease; }
+.draw.is-visible .picon { filter: drop-shadow(0 0 7px rgba(214, 183, 122, 0.45)); }
+.picon * { transform-box: fill-box; transform-origin: center; }
+
+
+/* Travelling sparks */
+.i-sparks { opacity: 0; transition: opacity 1s ease 2.6s; filter: drop-shadow(0 0 3px #f6e7c4); }
+.draw.is-visible .i-sparks { opacity: 1; }
+
+/* I · Trading Floor — candles tick like a live market */
+.picon .i-candle { transform-origin: center bottom; }
+.draw.is-visible .picon .i-candle { animation: i-tick 2.4s ease-in-out infinite; }
+
+/* Innovation — gear turns, rays flash */
+.draw.is-visible .picon .i-gear { animation: i-spin 6s linear 2.6s infinite; }
+.draw.is-visible .picon .i-ray { animation: i-ray 2s ease-in-out infinite; }
+
+/* Business — people nod in turn */
+.draw.is-visible .picon .i-person { animation: i-bob 3s ease-in-out infinite; }
+
+/* Knowledge — a page turns, stars twinkle */
+.picon .i-page { transform-origin: left center; opacity: 0; }
+.draw.is-visible .picon .i-page { animation: i-flip 4s cubic-bezier(0.6, 0, 0.3, 1) 3s infinite; }
+.draw.is-visible .picon .i-twinkle { animation: i-twinkle 2.2s ease-in-out 3s infinite; }
+.draw.is-visible .picon .i-twinkle--b { animation-delay: 4.1s; }
+
+/* Performance — needle sweeps, bars climb */
+.picon .i-needle { transform-box: view-box; transform-origin: 60px 84px; transform: rotate(-70deg); transition: transform 1.6s cubic-bezier(0.3, 1.4, 0.5, 1) 1.4s, stroke-dashoffset 1.6s; }
+.draw.is-visible .picon .i-needle { transform: rotate(40deg); animation: i-needle 5s ease-in-out 3.2s infinite; }
+.picon .i-bar { transform-origin: center bottom; }
+.draw.is-visible .picon .i-bar { animation: i-grow 2.5s ease-in-out infinite; }
+
+/* Stillness — lotus opens and closes with the breath */
+.picon .i-petal { transform-box: view-box; transform-origin: 60px 84px; }
+.draw.is-visible .picon .i-petal--l { animation: i-open-l 6s ease-in-out 3s infinite; }
+.draw.is-visible .picon .i-petal--r { animation: i-open-r 6s ease-in-out 3s infinite; }
+.draw.is-visible .picon .i-petal--outer-l { animation: i-open-l 6s ease-in-out 3.3s infinite; }
+.draw.is-visible .picon .i-petal--outer-r { animation: i-open-r 6s ease-in-out 3.3s infinite; }
+.draw.is-visible .picon .i-aura { animation: i-breathe 6s ease-in-out 3s infinite; }
+.draw.is-visible .picon .i-water { animation: i-water 4s ease-in-out 3s infinite; }
+.draw.is-visible .picon .i-water--b { animation-delay: 3.8s; }
+
+/* Conditioning — dumbbell lifts, heartbeat pulses */
+.draw.is-visible .picon .i-lift { animation: i-lift 2.4s cubic-bezier(0.5, 0, 0.3, 1) 3s infinite; }
+.draw.is-visible .picon .i-ecg { animation: i-shimmer 1.2s ease-in-out 3s infinite; }
+
+/* Reflection — heart beats, calm rings spread outward */
+.draw.is-visible .picon .i-heart { animation: i-beat 1.6s ease-in-out 3s infinite; }
+.picon .i-ping { opacity: 0; }
+.draw.is-visible .picon .i-ping { animation: i-ping 3.2s ease-out 3s infinite; }
+.draw.is-visible .picon .i-ping--b { animation-delay: 4.6s; }
+
+@keyframes i-tick { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.14); } }
+@keyframes i-spin { to { transform: rotate(360deg); } }
+@keyframes i-ray { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.25; transform: scale(0.7); } }
+@keyframes i-bob { 0%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } 60% { transform: translateY(0); } }
+@keyframes i-flip {
+  0% { opacity: 0; transform: scaleX(1); }
+  10% { opacity: 1; transform: scaleX(1); }
+  55% { opacity: 1; transform: scaleX(-1); }
+  70%, 100% { opacity: 0; transform: scaleX(-1); }
+}
+@keyframes i-twinkle { 0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); } 50% { opacity: 0.3; transform: scale(0.6) rotate(45deg); } }
+@keyframes i-needle { 0%, 100% { transform: rotate(40deg); } 25% { transform: rotate(-20deg); } 55% { transform: rotate(62deg); } 75% { transform: rotate(30deg); } }
+@keyframes i-grow { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.5); } }
+@keyframes i-open-l { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-9deg); } }
+@keyframes i-open-r { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(9deg); } }
+@keyframes i-breathe { 0%, 100% { transform: scale(0.94); opacity: 0.5; } 50% { transform: scale(1.06); opacity: 1; } }
+@keyframes i-water { 0%, 100% { transform: translateX(0) scaleX(1); } 50% { transform: translateX(3px) scaleX(0.85); } }
+@keyframes i-lift { 0%, 100% { transform: translateY(4px); } 45%, 60% { transform: translateY(-8px); } }
+@keyframes i-shimmer { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes i-beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } }
+@keyframes i-ping { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(4); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .picon *, .pillar-frame__glow, .pillar-frame::after { animation: none !important; }
+  .i-sparks, .picon .i-page, .picon .i-ping { display: none; }
+  .picon .i-needle { transform: rotate(40deg); transition: none; }
+  .pillar-frame__glow { opacity: 1; transition: none; }
+  .pillar-corner { width: 28px; height: 28px; transition: none; }
+}
+
 /* Hero headline line reveal */
 @keyframes rise {
   from { opacity: 0; transform: translateY(0.4em); }

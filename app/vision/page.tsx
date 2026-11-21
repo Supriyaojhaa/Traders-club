@@ -25,7 +25,7 @@ export default function VisionPage() {
           <div className="mt-20 grid border-t border-rule md:grid-cols-3">
             {beliefs.map((b, i) => (
               <Reveal key={b.word} delay={i * 120} className="border-b border-rule p-8 md:border-b-0 md:border-r md:last:border-r-0 sm:p-12">
-                <span className="eyebrow text-[0.6rem]! text-gold">{["I", "II", "III"][i]}</span>
+                <span className="eyebrow text-[0.6rem]! text-gold">{i + 1}</span>
                 <h3 className="display mt-6 text-3xl italic text-ink">{b.word}</h3>
                 <p className="mt-5 leading-relaxed text-muted">{b.body}</p>
               </Reveal>

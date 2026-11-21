@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
-import Motif from "@/components/Motif";
+import PillarIcon from "@/components/PillarIcon";
 import Reveal from "@/components/Reveal";
 import People from "@/components/sections/People";
 import FinalCta from "@/components/sections/FinalCta";
@@ -49,10 +49,18 @@ export default function ClubPage() {
                 draw
                 className={`flex justify-center lg:col-span-5 ${i % 2 === 1 ? "lg:order-2 lg:col-start-8" : ""}`}
               >
-                <div className="relative flex aspect-square w-full max-w-sm items-center justify-center border border-rule bg-paper">
-                  <div aria-hidden className="absolute inset-3 border border-rule/70" />
-                  <span className="display absolute left-6 top-4 text-5xl text-gold/40">{p.numeral}</span>
-                  <Motif type={p.motif} className="h-3/5 w-3/5 text-bronze" />
+                <div className="pillar-frame group relative flex aspect-square w-full max-w-sm items-center justify-center overflow-hidden border border-gold/40 bg-ink">
+                  <div aria-hidden className="pillar-frame__glow absolute inset-0" />
+                  <div aria-hidden className="absolute inset-3 border border-gold/25" />
+                  <span aria-hidden className="pillar-corner pillar-corner--tl" />
+                  <span aria-hidden className="pillar-corner pillar-corner--tr" />
+                  <span aria-hidden className="pillar-corner pillar-corner--bl" />
+                  <span aria-hidden className="pillar-corner pillar-corner--br" />
+                  <span className="display absolute left-6 top-4 text-5xl text-gold/60">{p.numeral}</span>
+                  <PillarIcon
+                    type={p.motif}
+                    className="relative h-3/5 w-3/5 transition-transform duration-1000 group-hover:scale-105"
+                  />
                 </div>
               </Reveal>
               <Reveal className={`lg:col-span-6 ${i % 2 === 1 ? "lg:order-1" : "lg:col-start-7"}`} delay={120}>

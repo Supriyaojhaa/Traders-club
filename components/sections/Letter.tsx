@@ -58,7 +58,7 @@ export default function Letter({ standalone = false }: { standalone?: boolean })
                       {places.map((pl, j) => (
                         <Reveal as="li" key={j} delay={j * 120} className="flex gap-5">
                           <span className="eyebrow mt-3 w-7 shrink-0 text-[0.58rem]! text-gold">
-                            {["I", "II", "III", "IV"][j]}
+                            {j + 1}
                           </span>
                           <span>
                             <strong className="font-semibold text-ink">A place</strong>
